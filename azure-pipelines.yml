@@ -63,6 +63,11 @@ stages:
         arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
         zipAfterPublish: true
 
+    - task: CopyFiles@2
+      inputs:
+        sourceFolder: $(Build.SourcesDirectory)
+        targetFolder: $(Build.ArtifactStagingDirectory)
+        
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
 
