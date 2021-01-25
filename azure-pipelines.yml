@@ -87,7 +87,7 @@ stages:
           Tailspin.SpaceGame.Database/bin/**/*.dacpac
         targetFolder: '$(Build.StagingDirectory)'
 
-    - task: PublishBuildArtifacts@1
+    - task: PublishPipelineArtifact@1
       displayName: 'Publish Artifact'
       inputs:
         pathToPublish: '$(Build.ArtifactStagingDirectory)'
